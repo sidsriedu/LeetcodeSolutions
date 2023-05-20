@@ -1,4 +1,4 @@
-package org.leetcode.solutions.EvaluateDivision;
+package solutions.EvaluateDivision;
 
 import java.util.*;
 
@@ -47,17 +47,17 @@ class Solution {
     }
 
     private Map<String, Map<String, Double>> createGraph(List<List<String>> equations, double[] values) {
-        Map<String, Map<String, Double>> graph = new HashMap();
+        Map<String, Map<String, Double>> graph = new HashMap<>();
         for(int i=0; i<equations.size(); i++) {
 
             String start = equations.get(i).get(0);
             String end = equations.get(i).get(1);
             double val = values[i];
 
-            graph.putIfAbsent(start, new HashMap());
+            graph.putIfAbsent(start, new HashMap<>());
             graph.get(start).put(end, val);
 
-            graph.putIfAbsent(end, new HashMap());
+            graph.putIfAbsent(end, new HashMap<>());
             graph.get(end).put(start, 1/val);
         }
         return graph;
