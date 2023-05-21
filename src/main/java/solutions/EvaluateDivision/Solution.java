@@ -25,7 +25,7 @@ class Solution {
 
     }
 
-    double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
+    private double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
         Map<String, Map<String, Double>> graph = createGraph(equations, values);    // {a={b=2.0}, b={a=0.5, c=3.0}, c={b=0.3333333333333333}}
         double[] result = new double[queries.size()];
         for(int i=0; i<queries.size(); i++) {
